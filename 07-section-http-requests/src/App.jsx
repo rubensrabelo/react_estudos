@@ -7,7 +7,7 @@ import { useFetch } from './hooks/useFetch';
 const url = "http://localhost:3000/products";
 
 function App() {
-  const [ products, setProducts ] = useEffect([]);
+  const [ products, setProducts ] = useState([]);
 
   const {data: items, httpConfig, loading, error} = useFetch(url);
 
