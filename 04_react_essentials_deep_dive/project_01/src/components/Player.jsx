@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Player({ name, symbol, isActive }) {
+function Player({ name, symbol, isActive, onChangeName }) {
     const [ playerName, setPlayerName ] = useState(name);
     const [ isEditing, setIsEditing ] = useState(false);
     const [ btnName, setBtnName ] = useState("Edit");
@@ -8,6 +8,9 @@ function Player({ name, symbol, isActive }) {
     function handleEditClick() {
         setIsEditing((editing) => !editing);
         setBtnName(isEditing ? "Edit" : "Save");
+        
+        if(isEditing)
+            onChangeName(symbol, playerName);
     }
 
     function handleInputChance(event) {
