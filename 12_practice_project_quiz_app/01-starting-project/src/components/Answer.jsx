@@ -24,7 +24,7 @@ function Answer({ answers, selectedAnswer, answerState, onSelect }) {
 
                 return (
                 <li key={answer} className="answer" >
-                    <button onClick={() => onSelect(selectedAnswer)} className={cssClasses}>{answer}</button>
+                    <button onClick={() => onSelect(selectedAnswer)} className={cssClasses} disabled={answer !== ""}>{answer}</button>
                 </li>
                 );
             })}
